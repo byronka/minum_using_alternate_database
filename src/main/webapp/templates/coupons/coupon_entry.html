@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Coupon Entry | Coupons</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="general/main.css" />
+</head>
+<body>
+    <h1>Coupon Entry</h1>
+
+    <form method="post" action="coupon">
+
+        <div>
+            <label for="website_input">Website*</label>
+            <input required minlength="4" maxlength="100" size="50" id="website_input" name="website" type="url" value="">
+        </div>
+
+        <div>
+            <label for="code_input">Code*</label>
+            <input required minlength="4" maxlength="15" size="18" id="code_input" name="code" type="text" value="">
+        </div>
+
+        <div>
+            <label for="discount_amount_input">Discount*</label>
+            <input required minlength="1" maxlength="4" id="discount_amount_input" name="discount" type="number" value="">
+        </div>
+
+        <fieldset>
+            <legend>Type*</legend>
+
+            <div>
+                <label for="discount_type_dollars" required>Dollars</label>
+                <input required id="discount_type_dollars" name="discount_type" type="radio" value="dollars">
+            </div>
+            <div>
+                <label for="discount_type_percentage" required>Percentage</label>
+                <input id="discount_type_percentage" name="discount_type" type="radio" value="percentage">
+            </div>
+
+        </fieldset>
+
+        <div>
+            <label for="description_input">Description</label>
+            <input id="description_input" name="description" type="text" value="">
+        </div>
+
+        <button id="coupon_submit">Enter</button>
+
+    </form>
+</body>
+</html>
