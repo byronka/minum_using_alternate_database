@@ -1,5 +1,7 @@
 package com.coupons.utils;
 
+import java.io.IOException;
+
 public final class FileUtils {
 
     private final com.renomad.minum.utils.FileUtils minumFileUtils;
@@ -11,10 +13,14 @@ public final class FileUtils {
     }
 
     /**
-     * Read a template file, expected to use this with {@link minum.templating.TemplateProcessor}
+     * Read a template file, expected to use this with {@link com.renomad.minum.templating.TemplateProcessor}
      */
     public String readTemplate(String path) {
-        return minumFileUtils.readTextFile(constants.TEMPLATE_DIRECTORY + path);
+        try {
+            return minumFileUtils.readTextFile(constants.TEMPLATE_DIRECTORY + path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
